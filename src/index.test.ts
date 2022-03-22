@@ -11,6 +11,7 @@ class TurboNumber {
   }
 
   divide(number: number) {
+    if (number === 0) throw new Error('Cannot divide by 0')
     this.number = this.number / number;
   }
 }
@@ -31,4 +32,9 @@ it("divides 8 by 2", () => {
   const turboNumber = new TurboNumber(8);
   turboNumber.divide(2)
   expect(turboNumber.result()).toBe(4)
+})
+
+it("throws when dividing by 0", () => {
+  const turboNumber = new TurboNumber(8);
+  expect(() => turboNumber.divide(0)).toThrow('Cannot divide by 0')
 })
