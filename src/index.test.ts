@@ -1,7 +1,17 @@
-import { number } from "./index";
+class TurboNumber {
+  constructor(private number: number) {
+  }
 
-describe("number", function () {
-  it("works", () => {
-    expect(number).toBe(5);
-  });
-});
+  subtract(number: number) {
+  }
+
+  result(): number {
+    return 3;
+  }
+}
+
+it("subtract 2 from 5", () => {
+  const turboNumber = new TurboNumber(5);
+  turboNumber.subtract(2)
+  expect(turboNumber.result()).toBe(3)
+})
