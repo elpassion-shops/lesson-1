@@ -4,6 +4,7 @@ class TurboNumber {
 
   subtract(number: number) {
     this.number = this.number - number
+    return this;
   }
 
   result(): number {
@@ -23,8 +24,7 @@ it("subtract 2 from 5", () => {
 })
 
 it("subtract 3 from 8", () => {
-  const turboNumber = new TurboNumber(8);
-  turboNumber.subtract(3)
+  const turboNumber = new TurboNumber(8).subtract(3);
   expect(turboNumber.result()).toBe(5)
 })
 
